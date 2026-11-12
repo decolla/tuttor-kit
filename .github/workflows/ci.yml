@@ -9,12 +9,17 @@ permissions:
 
 jobs:
   verificar:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         # 3.9 é o mínimo do kit; "3.x" é a versão estável mais nova que o setup-python oferece.
-        python-version: ["3.9", "3.x"]
+        # O setup-python não tem Python 3.9 para o Ubuntu 26.04 (ubuntu-latest), só até o 24.04.
+        include:
+          - python-version: "3.9"
+            os: ubuntu-24.04
+          - python-version: "3.x"
+            os: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7

@@ -299,7 +299,8 @@ def test_tutor_como_link_e_recusado(ambiente, tmp_path, capsys):
     (ambiente / ".tutor").symlink_to(alvo)
     with pytest.raises(vigia.ErroDeUso):
         vigia.Vigia(str(ambiente), cfg_de(), Falso())
-    assert vigia.main([]) == 2
+    # --ensaio: sem a checagem do provedor, que falharia antes onde o `claude` não está instalado.
+    assert vigia.main(["--ensaio"]) == 2
     assert "link simbólico" in capsys.readouterr().err
     assert list(alvo.iterdir()) == []
 
