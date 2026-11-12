@@ -1,0 +1,284 @@
+[
+ {
+  "cli": "codex",
+  "afirmacao": "Lê AGENTS.override.md e AGENTS.md; global em ~/.codex (CODEX_HOME); do raiz do projeto até o diretório atual, um arquivo por pasta, mais próximo vem depois; project_doc_fallback_filenames; project_doc_max_bytes padrão 32 KiB",
+  "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "codex",
+  "afirmacao": "Agent Skills (SKILL.md com name e description); pastas $CWD/.agents/skills até a raiz do repo, $HOME/.agents/skills, /etc/codex/skills; desativar via [[skills.config]]",
+  "url": "https://learn.chatgpt.com/docs/build-skills",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "codex",
+  "afirmacao": "Prompts personalizados (~/.codex/prompts/*.md, /prompts:nome) estão obsoletos em favor de skills",
+  "url": "https://learn.chatgpt.com/docs/custom-prompts",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "codex",
+  "afirmacao": "codex exec: prompt do stdin com '-' ou omitindo; --sandbox (padrão read-only), -o, --ephemeral, --skip-git-repo-check, --color, --json, --model/-m, --cd; progresso em stderr e só a mensagem final em stdout; CODEX_API_KEY",
+  "url": "https://learn.chatgpt.com/docs/non-interactive-mode",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "codex",
+  "afirmacao": "Flags globais --sandbox/-s (read-only|workspace-write|danger-full-access), --ask-for-approval/-a (on-request|never), --model, --config/-c, --profile, --oss, --local-provider (lmstudio|ollama), --no-alt-screen",
+  "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "codex",
+  "afirmacao": "Modos de sandbox, políticas de aprovação (on-request, never, granular; untrusted aposentada), caminhos protegidos .git/.codex/.agents/.aws, rede desligada por padrão",
+  "url": "https://learn.chatgpt.com/docs/agent-approvals-security",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "codex",
+  "afirmacao": "Perfis de permissão (Beta): default_permissions, [permissions.<nome>.filesystem], valores read/write/deny, :workspace_roots, perfis embutidos :read-only/:workspace/:danger-full-access; não funcionam junto com sandbox_mode",
+  "url": "https://learn.chatgpt.com/docs/permissions",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "codex",
+  "afirmacao": "Hooks: eventos, registro em hooks.json/config.toml (~/.codex e <repo>/.codex), entrada JSON, saída deny, exit code 2, 'ask' não suportado, 'guardrail, não fronteira de aplicação', confiança via /hooks",
+  "url": "https://learn.chatgpt.com/docs/hooks",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "codex",
+  "afirmacao": "config.toml: model, model_provider, model_providers.<id>.base_url/env_key, openai_base_url, model_instructions_file, tui.status_line, tui.theme, tui.terminal_title, features.hooks, skills.config",
+  "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "codex",
+  "afirmacao": "Provedor customizado (base_url, env_key), --oss com Ollama, oss_provider, perfis em ~/.codex/<nome>.config.toml, [profiles.*] não lidos a partir da 0.134.0, tui.*",
+  "url": "https://learn.chatgpt.com/docs/config-file/config-advanced",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "codex",
+  "afirmacao": "Repositório oficial openai/codex; instalação por npm/brew/script",
+  "url": "https://github.com/openai/codex",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "codex",
+  "afirmacao": "Integração Ollama: ollama launch codex, codex --oss, perfil ollama-launch, contexto mínimo de 64k",
+  "url": "https://docs.ollama.com/integrations/codex",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "GEMINI.md: ~/.gemini/GEMINI.md, workspace e pais, JIT; context.fileName; @imports; /memory show|reload",
+  "url": "https://geminicli.com/docs/cli/gemini-md/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Agent Skills: ~/.gemini/skills, ~/.agents/skills, .gemini/skills, .agents/skills; /skills; padrão agentskills.io",
+  "url": "https://geminicli.com/docs/cli/skills/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Comandos personalizados em TOML (~/.gemini/commands, .gemini/commands; campos prompt e description; {{args}}, !{}, @{}; namespace por subpasta)",
+  "url": "https://geminicli.com/docs/cli/custom-commands/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Flags: -p/--prompt (anexado ao stdin, força modo não interativo), -m/--model, --approval-mode (default|auto_edit|yolo|plan), -s/--sandbox, -o/--output-format (text|json|stream-json), -i",
+  "url": "https://geminicli.com/docs/cli/cli-reference/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Modo headless: ativado por -p ou terminal não interativo; códigos de saída 0, 1, 42, 53; json traz response/stats/error",
+  "url": "https://geminicli.com/docs/cli/headless/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Modo plano: somente leitura; write_file e replace só em .md no diretório de planos (general.plan.directory); funciona com -p; sair do plano em modo não interativo muda para YOLO",
+  "url": "https://geminicli.com/docs/cli/plan-mode/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Motor de políticas: ~/.gemini/policies/*.toml, [[rule]] com toolName/argsPattern/commandPrefix/decision/priority/modes; políticas de workspace sem efeito; ask_user vira deny em modo não interativo",
+  "url": "https://geminicli.com/docs/reference/policy-engine/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Hooks: eventos BeforeTool etc., entrada JSON (tool_name, tool_input), saída decision deny/reason, exit code 2, 'settings.json' hooks",
+  "url": "https://geminicli.com/docs/hooks/reference/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Exemplo de registro de hook BeforeTool com matcher write_file|replace e camadas de settings (projeto, usuário, sistema)",
+  "url": "https://geminicli.com/docs/hooks/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Nomes das ferramentas (write_file, replace, run_shell_command, read_file...) e parâmetro file_path",
+  "url": "https://geminicli.com/docs/reference/tools/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Sandbox: Seatbelt (macOS), Docker/Podman, Windows nativo, gVisor, LXC; -s, GEMINI_SANDBOX, tools.sandbox; 'reduz mas não elimina riscos'",
+  "url": "https://geminicli.com/docs/cli/sandbox/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Autenticação: login Google, GEMINI_API_KEY, Vertex AI (GOOGLE_API_KEY, GOOGLE_CLOUD_PROJECT...), .env em .gemini/.env ou ~/.gemini/.env; headless usa credencial em cache ou variáveis",
+  "url": "https://geminicli.com/docs/get-started/authentication/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Configuração: settings.json (usuário, projeto, sistema), GEMINI_SYSTEM_MD, ui.theme, ui.hideBanner, ui.footer.*, ui.customWittyPhrases, GOOGLE_GEMINI_BASE_URL, general.defaultApprovalMode",
+  "url": "https://geminicli.com/docs/reference/configuration/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Temas: /theme, ui.theme, temas embutidos e customThemes",
+  "url": "https://geminicli.com/docs/cli/themes/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "gemini",
+  "afirmacao": "Aviso: a partir de 18/06/2026 usuários sem plano pago e Google One foram migrados para o Antigravity CLI; repositório oficial google-gemini/gemini-cli",
+  "url": "https://github.com/google-gemini/gemini-cli",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "Regras: AGENTS.md (projeto) e ~/.config/opencode/AGENTS.md; CLAUDE.md como alternativa; campo instructions; OPENCODE_DISABLE_CLAUDE_CODE*",
+  "url": "https://opencode.ai/docs/rules/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "Permissões (V2): lista 'permissions' com action/resource/effect (allow|ask|deny), última regra vence, ações edit/shell/read/skill/external_directory, padrão ask, agentes plan/explore",
+  "url": "https://opencode.ai/docs/permissions/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "Comandos personalizados: .opencode/commands/ e ~/.config/opencode/commands/, frontmatter description/agent/model/subagent, $ARGUMENTS, $1",
+  "url": "https://opencode.ai/docs/commands/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "Skills: ~/.config/opencode/skills, .opencode/skills, .claude/skills, .agents/skills, ~/.claude/skills, ~/.agents/skills; ação de permissão 'skill'",
+  "url": "https://opencode.ai/docs/skills/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "Agentes: .opencode/agents/<nome>.md ou chave agents; campos description, mode, model, system, permissions; default_agent",
+  "url": "https://opencode.ai/docs/agents/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "Configuração: opencode.json(c) global e de projeto, .opencode/, model provider/modelo, instructions, {env:VAR}, {file:caminho}",
+  "url": "https://opencode.ai/docs/config/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "Provedores: /connect, variáveis de ambiente por provedor, provedor compatível com OpenAI (providers.<id>.settings.baseURL, env), Ollama local detectado em 127.0.0.1:11434",
+  "url": "https://opencode.ai/docs/providers/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "opencode run: flags --model, --agent, --format json, --file, --continue, --session, --auto; prompt como argumento; stdin não documentado",
+  "url": "https://dev.opencode.ai/v2/docs/cli/commands",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "Configuração da TUI em ~/.config/opencode/cli.json: theme.name, theme.mode, mini.splash, mini.footer, session.tps",
+  "url": "https://opencode.ai/docs/cli/config/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "Plugins: carregados de .opencode/plugins/ e ~/.config/opencode/plugins/; hook execute.before via ctx.tool.hook sem retorno de bloqueio documentado",
+  "url": "https://opencode.ai/docs/build/plugins/server/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "Plugins: localização e função Plugin.define",
+  "url": "https://opencode.ai/docs/build/plugins/",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "Repositório oficial anomalyco/opencode; docs em opencode.ai/docs; instalação V2",
+  "url": "https://github.com/sst/opencode",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "opencode",
+  "afirmacao": "Integração Ollama (ollama launch opencode; contexto mínimo 64k; configuração manual com chaves da V1)",
+  "url": "https://docs.ollama.com/integrations/opencode",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "ollama",
+  "afirmacao": "Modelfile: FROM, PARAMETER (temperature, num_ctx), SYSTEM \"\"\"...\"\"\", TEMPLATE, MESSAGE",
+  "url": "https://docs.ollama.com/modelfile",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "ollama",
+  "afirmacao": "ollama run com prompt por argumento ou stdin; ollama create -f; ollama launch <integração> [--model] [--config]",
+  "url": "https://docs.ollama.com/cli",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "ollama",
+  "afirmacao": "Integrações listadas em ollama launch (claude, opencode etc.)",
+  "url": "https://docs.ollama.com/integrations",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "ollama",
+  "afirmacao": "OLLAMA_API_KEY e Authorization: Bearer só para a nuvem; API local sem autenticação",
+  "url": "https://docs.ollama.com/api/authentication",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "ollama",
+  "afirmacao": "Servidor em 127.0.0.1:11434 (OLLAMA_HOST); contexto padrão 4096 (OLLAMA_CONTEXT_LENGTH); /set parameter num_ctx",
+  "url": "https://docs.ollama.com/faq",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "ollama",
+  "afirmacao": "Chamada de ferramentas: o modelo devolve tool_calls e quem executa é o código chamador",
+  "url": "https://docs.ollama.com/capabilities/tool-calling",
+  "aberta_em": "2026-11-11"
+ },
+ {
+  "cli": "ollama",
+  "afirmacao": "ollama --help, run --help, show --help, create --help, launch --help, list e um create/show/run/rm de teste, executados localmente (versão 0.34.1)",
+  "url": "local: ollama 0.34.1",
+  "aberta_em": "2026-11-11"
+ }
+]

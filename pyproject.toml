@@ -1,0 +1,34 @@
+# Só configuração de ferramentas: o kit não é um pacote Python e não tem dependências
+# (os scripts usam apenas a biblioteca padrão, compatível com Python 3.9+).
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+extend-exclude = ["docs/pesquisa", "docs/cli"]
+
+[tool.ruff.lint]
+# E/W: estilo do pycodestyle (inclui o limite de 100 colunas, regra do projeto).
+# F: erros reais (import ou variável sem uso, nome indefinido).
+# I: imports ordenados, para diffs pequenos.
+# B: armadilhas comuns (argumento mutável como padrão, except sem motivo...).
+# UP: sintaxe antiga demais para o alvo py39 (mas sem exigir recursos que o 3.9 não tem).
+select = ["E", "F", "W", "I", "B", "UP"]
+# Ignorados de propósito (mudar exigiria reescrever código que funciona e tem teste):
+#   UP031: o projeto formata texto com % em vários scripts;
+#   E741: `l` é o nome corrente de "linha" nos scripts e nos testes;
+#   B007: variáveis de laço nomeadas por clareza, mesmo sem uso;
+#   B904: erros próprios re-lançados com mensagem em português, sem encadear a causa.
+ignore = ["UP031", "E741", "B007", "B904"]
+
+[tool.ruff.lint.per-file-ignores]
+# tests/test_guard.py (a suíte da trava) tem duas linhas de 101 colunas e não deve ser reformatada.
+"tests/test_guard.py" = ["E501"]
+
+[tool.ruff.lint.isort]
+# Os scripts da skill são importados por nome (conftest.py põe a pasta no sys.path).
+known-first-party = ["configuracoes", "contexto", "estado", "guard", "kit", "lancador",
+                     "mascote", "provedores", "segredos", "statusline", "vigia"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -p no:cacheprovider"

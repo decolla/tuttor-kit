@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Atalho fino: roda vigia.py da skill principal do kit.
+set -euo pipefail
+origem="${BASH_SOURCE[0]}"
+while [ -L "$origem" ]; do
+  pasta="$(cd -P "$(dirname "$origem")" && pwd)"
+  origem="$(readlink "$origem")"
+  case "$origem" in /*) ;; *) origem="$pasta/$origem" ;; esac
+done
+raiz="$(cd -P "$(dirname "$origem")/.." && pwd)"
+for script in "$raiz"/skills/*/scripts/vigia.py; do
+  [ -f "$script" ] && exec python3 "$script" "$@"
+done
+echo "tuttor-vigia: não achei vigia.py em $raiz/skills/*/scripts/" >&2
+exit 1

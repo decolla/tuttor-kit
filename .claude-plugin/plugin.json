@@ -1,0 +1,17 @@
+{
+  "name": "tuttor-kit",
+  "version": "0.1.0",
+  "description": "Tutor de programação para CLIs de IA: guia com perguntas e dicas e não escreve o código do aluno",
+  "author": {
+    "name": "decolla"
+  },
+  "homepage": "https://github.com/decolla/tuttor-kit",
+  "repository": "https://github.com/decolla/tuttor-kit",
+  "license": "MIT",
+  "keywords": [
+    "tutor",
+    "ensino",
+    "programação",
+    "socrático"
+  ]
+}

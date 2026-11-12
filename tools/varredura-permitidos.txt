@@ -1,0 +1,6 @@
+# Arquivos de teste que guardam segredos FALSOS de propósito (para testar o filtro de segredos).
+# Um caminho por linha. Só silencia chaves, tokens, PEM e senha=; e-mail, home e usuário continuam
+# valendo. Não ponha aqui nada que não seja fixture de teste.
+tests/test_provedores.py
+tests/test_segredos.py
+tests/test_vigia.py

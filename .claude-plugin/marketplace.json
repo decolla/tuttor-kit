@@ -1,0 +1,14 @@
+{
+  "name": "tuttor-kit",
+  "owner": {
+    "name": "decolla"
+  },
+  "description": "Tutor de programação para CLIs de IA: guia com perguntas e dicas e não escreve o código do aluno",
+  "plugins": [
+    {
+      "name": "tuttor-kit",
+      "source": "./",
+      "description": "Tutor de programação para CLIs de IA: guia com perguntas e dicas e não escreve o código do aluno"
+    }
+  ]
+}

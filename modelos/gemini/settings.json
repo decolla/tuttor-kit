@@ -1,0 +1,19 @@
+{
+  "_comentario": "EXPERIMENTAL, NAO TESTADO. Formato de https://geminicli.com/docs/hooks/ e https://geminicli.com/docs/reference/configuration/ (abertas em 2026-11-11). Remova esta chave se o Gemini CLI reclamar dela. O adaptador tuttor_guard.py ainda NAO existe: ver docs/cli/gemini.md.",
+  "general": { "defaultApprovalMode": "plan" },
+  "hooks": {
+    "BeforeTool": [
+      {
+        "matcher": "write_file|replace|run_shell_command",
+        "hooks": [
+          {
+            "name": "tuttor-guard",
+            "type": "command",
+            "command": "$GEMINI_PROJECT_DIR/.gemini/hooks/tuttor_guard.py",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  }
+}

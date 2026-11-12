@@ -1,0 +1,13 @@
+# EXPERIMENTAL, NÃO TESTADO. Chaves de https://learn.chatgpt.com/docs/permissions (aberta em 2026-11-11,
+# recurso Beta: "may change"). Perfis de permissão NÃO funcionam junto com sandbox_mode/--sandbox.
+# A doc NÃO traz este exemplo: ele é inferido da regra "mais específico vence; deny > write > read".
+# Se não funcionar, use a alternativa verificada: codex --sandbox read-only (sem escrita em .tutor/).
+default_permissions = "tutor"
+
+[permissions.tutor.filesystem]
+":minimal" = "read"
+
+[permissions.tutor.filesystem.":workspace_roots"]
+"." = "read"
+".tutor" = "write"
+"**/*.env" = "deny"

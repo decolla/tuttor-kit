@@ -1,0 +1,13 @@
+# EXPERIMENTAL, NÃO TESTADO. Sintaxe de https://geminicli.com/docs/reference/policy-engine/
+# (aberta em 2026-11-11). Instale em ~/.gemini/policies/ (políticas em .gemini/policies/ do projeto
+# estão desativadas segundo a doc). Nomes de ferramenta e parâmetro file_path:
+# https://geminicli.com/docs/reference/tools/
+# Esta política nega TODA escrita por write_file/replace, inclusive em .tutor/. Não há regra
+# liberando .tutor/ de propósito: um padrão de texto sobre o caminho não resolve `..` nem links
+# simbólicos, então `x/.tutor/../../outro` passaria. Liberar .tutor/ com segurança exige um
+# hook BeforeTool que normalize o caminho (ver docs/cli/gemini.md).
+# Não cobre run_shell_command (um redirecionamento de shell ainda escreve arquivos).
+[[rule]]
+toolName = ["write_file", "replace"]
+decision = "deny"
+priority = 100

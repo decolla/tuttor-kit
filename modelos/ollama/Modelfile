@@ -1,0 +1,9 @@
+# Sintaxe (FROM, PARAMETER, SYSTEM """...""") de https://docs.ollama.com/modelfile (aberta em 2026-11-11).
+# Testado: com o texto de teste no lugar de {{PERSONA}}, `ollama create`, `ollama show --system`,
+# `ollama run` e `ollama rm` funcionaram (Ollama 0.34.1, base llama3.2:1b).
+# Troque FROM pelo modelo que você usa. O gerador do kit substitui {{PERSONA}}; a persona não
+# pode conter três aspas duplas seguidas.
+FROM llama3.2:1b
+PARAMETER temperature 0.4
+PARAMETER num_ctx 8192
+SYSTEM """{{PERSONA}}"""

@@ -1,0 +1,18 @@
+{
+  "description": "EXPERIMENTAL, NAO TESTADO. Formato de https://learn.chatgpt.com/docs/hooks (aberta em 2026-11-11). O adaptador tuttor_guard.py ainda NAO existe: ver docs/cli/codex.md. Hook de projeto so carrega com .codex/ confiavel e depois de aprovado em /hooks.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|Write|apply_patch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/.codex/hooks/tuttor_guard.py\"",
+            "timeout": 30,
+            "statusMessage": "Trava do modo tutor"
+          }
+        ]
+      }
+    ]
+  }
+}

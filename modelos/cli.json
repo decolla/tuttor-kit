@@ -1,0 +1,143 @@
+{
+ "claude": {
+  "nome": "Claude Code",
+  "binario": "claude",
+  "situacao": "principal"
+ },
+ "codex": {
+  "nome": "Codex CLI",
+  "binario": "codex",
+  "situacao": "experimental",
+  "instrucoes": {
+   "arquivo": "AGENTS.md",
+   "local_projeto": "AGENTS.md (da raiz do projeto até o diretório atual; AGENTS.override.md tem prioridade na mesma pasta)",
+   "local_usuario": "~/.codex/AGENTS.md (ou $CODEX_HOME)"
+  },
+  "skills": {
+   "suporta": true,
+   "pastas": [
+    ".agents/skills",
+    "~/.agents/skills",
+    "/etc/codex/skills"
+   ]
+  },
+  "interativo": [
+   "codex",
+   "--sandbox",
+   "read-only",
+   "--ask-for-approval",
+   "on-request"
+  ],
+  "vigia_comando": "codex exec --sandbox read-only --ephemeral --skip-git-repo-check --color never --model {modelo} -",
+  "variavel_chave": "CODEX_API_KEY",
+  "trava": "sandbox",
+  "fontes": [
+   "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+   "https://learn.chatgpt.com/docs/build-skills",
+   "https://learn.chatgpt.com/docs/non-interactive-mode",
+   "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+   "https://learn.chatgpt.com/docs/agent-approvals-security",
+   "https://learn.chatgpt.com/docs/permissions",
+   "https://learn.chatgpt.com/docs/hooks"
+  ]
+ },
+ "gemini": {
+  "nome": "Gemini CLI",
+  "binario": "gemini",
+  "situacao": "experimental",
+  "instrucoes": {
+   "arquivo": "GEMINI.md",
+   "local_projeto": "GEMINI.md (diretório de trabalho e pastas pai)",
+   "local_usuario": "~/.gemini/GEMINI.md"
+  },
+  "skills": {
+   "suporta": true,
+   "pastas": [
+    ".gemini/skills",
+    ".agents/skills",
+    "~/.gemini/skills",
+    "~/.agents/skills"
+   ]
+  },
+  "interativo": [
+   "gemini",
+   "--approval-mode",
+   "plan"
+  ],
+  "vigia_comando": "gemini --model {modelo} --approval-mode plan --output-format text -p \"Responda ao pedido que chegou pela entrada padrao.\"",
+  "variavel_chave": "GEMINI_API_KEY",
+  "trava": "permissoes",
+  "fontes": [
+   "https://geminicli.com/docs/cli/gemini-md/",
+   "https://geminicli.com/docs/cli/skills/",
+   "https://geminicli.com/docs/cli/cli-reference/",
+   "https://geminicli.com/docs/cli/plan-mode/",
+   "https://geminicli.com/docs/reference/policy-engine/",
+   "https://geminicli.com/docs/hooks/reference/",
+   "https://geminicli.com/docs/get-started/authentication/"
+  ]
+ },
+ "opencode": {
+  "nome": "OpenCode",
+  "binario": "opencode",
+  "situacao": "experimental",
+  "instrucoes": {
+   "arquivo": "AGENTS.md",
+   "local_projeto": "AGENTS.md (raiz do projeto)",
+   "local_usuario": "~/.config/opencode/AGENTS.md"
+  },
+  "skills": {
+   "suporta": true,
+   "pastas": [
+    ".opencode/skills",
+    ".claude/skills",
+    ".agents/skills",
+    "~/.config/opencode/skills",
+    "~/.claude/skills",
+    "~/.agents/skills"
+   ]
+  },
+  "interativo": [
+   "opencode"
+  ],
+  "vigia_comando": null,
+  "variavel_chave": null,
+  "trava": "permissoes",
+  "fontes": [
+   "https://opencode.ai/docs/rules/",
+   "https://opencode.ai/docs/permissions/",
+   "https://opencode.ai/docs/skills/",
+   "https://opencode.ai/docs/agents/",
+   "https://opencode.ai/docs/commands/",
+   "https://dev.opencode.ai/v2/docs/cli/commands"
+  ]
+ },
+ "ollama": {
+  "nome": "Ollama",
+  "binario": "ollama",
+  "situacao": "experimental",
+  "instrucoes": {
+   "arquivo": "Modelfile (instrução SYSTEM)",
+   "local_projeto": null,
+   "local_usuario": null
+  },
+  "skills": {
+   "suporta": false,
+   "pastas": []
+  },
+  "interativo": [
+   "ollama",
+   "run",
+   "tuttor"
+  ],
+  "vigia_comando": "ollama run {modelo}",
+  "variavel_chave": "OLLAMA_API_KEY",
+  "trava": "instrucoes",
+  "fontes": [
+   "https://docs.ollama.com/modelfile",
+   "https://docs.ollama.com/cli",
+   "https://docs.ollama.com/api/authentication",
+   "https://docs.ollama.com/capabilities/tool-calling"
+  ]
+ }
+}

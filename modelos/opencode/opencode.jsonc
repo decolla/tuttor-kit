@@ -1,0 +1,21 @@
+// EXPERIMENTAL, NÃO TESTADO. Sintaxe da documentação V2:
+// https://opencode.ai/docs/permissions/ , https://opencode.ai/docs/agents/ (abertas em 2026-11-11).
+// A V1 usa outros nomes (permission, bash). NÃO verificado: se o resource de "edit" é caminho
+// relativo ou absoluto (por isso as duas formas) e se o agente "tutor" herda a persona de AGENTS.md.
+// Um comando de shell ainda pode escrever arquivos; aqui o shell fica em "ask".
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "tutor",
+  "agents": {
+    "tutor": {
+      "description": "Tutor de programação: guia, não escreve o código do aluno",
+      "mode": "primary",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "edit", "resource": ".tutor/*", "effect": "allow" },
+        { "action": "edit", "resource": "*/.tutor/*", "effect": "allow" },
+        { "action": "shell", "resource": "*", "effect": "ask" }
+      ]
+    }
+  }
+}
