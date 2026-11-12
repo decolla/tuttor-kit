@@ -217,9 +217,9 @@ Because the literature review found no adequate evidence to justify matching ins
 
 ### What was and was not tested
 
-Verification of 2026-11-12 (Linux, Claude Code 2.1.322, Python 3.12). **Tested for real:** the lock blocked `Write` outside `.tutor/` and a shell redirection, and allowed `Write` inside `.tutor/`; isolation (only the kit plugin loaded); persona applied by the plugin; the refusal shown above; `/dica` and `/praticar` without the plugin prefix; the live watcher with `claude-cli`; the watcher with local Ollama; clean-HOME install (dry run, twice, `--verificar`, `--uninstall`); 991 automated tests, ruff, shellcheck, vermin (target 3.9) and `claude plugin validate`.
+Verification of 2026-11-12 (Linux, Claude Code 2.1.322, Python 3.12). **Tested for real:** the lock blocked `Write` outside `.tutor/` and a shell redirection, and allowed `Write` inside `.tutor/`; isolation (only the kit plugin loaded); persona applied by the plugin; the refusal shown above; `/dica` and `/praticar` without the plugin prefix; the live watcher with `claude-cli`; the watcher with local Ollama; clean-HOME install (dry run, twice, `--verificar`, `--uninstall`); 991 automated tests, ruff, shellcheck, vermin (target 3.9) and `claude plugin validate`; the GitHub CI, which runs the same checks on Python 3.9 and on the newest stable Python (Linux runners).
 
-**Not tested:** the interactive screen session (status line, spinner verbs and tips, mascot banner with Claude Code, start message); `tuttor --tmux` (only with a fake tmux); Codex CLI, Gemini CLI and OpenCode (nothing executed); the `anthropic` and `openai` HTTP providers against the real paid APIs; macOS and Windows; real execution on Python 3.9 (static analysis only); install through the plugin marketplace; the GitHub CI (it has not run yet). Full report: [`docs/verificacao.md`](docs/verificacao.md) (Portuguese).
+**Not tested:** the interactive screen session (status line, spinner verbs and tips, mascot banner with Claude Code, start message); `tuttor --tmux` (only with a fake tmux); Codex CLI, Gemini CLI and OpenCode (nothing executed); the `anthropic` and `openai` HTTP providers against the real paid APIs; macOS and Windows; install through the plugin marketplace. Full report: [`docs/verificacao.md`](docs/verificacao.md) (Portuguese).
 
 ## Contributing
 

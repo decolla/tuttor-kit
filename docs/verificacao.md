@@ -17,6 +17,7 @@ As sessões do Claude Code foram em modo não interativo (`-p`), abertas pelo la
 - **Vigia com Ollama local (`llama3.2:1b`)**, pelos provedores `openai` (`http://localhost:11434/v1`) e `comando`: o fluxo funcionou; o modelo de 1B comenta mal.
 - **Instalação em HOME limpa.** `--dry-run` não gravou nada; instalar duas vezes deu o mesmo resultado; `--verificar` passou; `--uninstall` removeu só os três links.
 - **Qualidade.** 991 testes automatizados passando; ruff, shellcheck e vermin (alvo 3.9) limpos; `claude plugin validate` passou.
+- **CI no GitHub.** Depois da publicação, as mesmas checagens (ruff, shellcheck, vermin, gerador, varredura e os 991 testes) passaram no GitHub Actions em Python 3.9.25 (Ubuntu 24.04) e 3.15.2 (`ubuntu-latest`). A primeira execução falhou: o `ubuntu-latest` não tem Python 3.9 e um teste do vigia dependia do `claude` instalado; os dois foram corrigidos.
 
 ## Não testado
 
@@ -25,9 +26,7 @@ As sessões do Claude Code foram em modo não interativo (`-p`), abertas pelo la
 - Codex CLI, Gemini CLI e OpenCode: nada foi executado (experimental).
 - Os provedores HTTP `anthropic` e `openai` contra as APIs pagas reais: só servidor falso e Ollama.
 - macOS e Windows.
-- Execução real em Python 3.9: só análise estática (vermin).
 - Instalação pelo marketplace de plugins.
-- O CI no GitHub: ainda não rodou.
 
 ## Trecho real de sessão (cortado)
 
